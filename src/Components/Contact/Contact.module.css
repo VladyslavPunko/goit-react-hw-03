@@ -2,10 +2,9 @@
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  gap: 20px;
   border: 1px solid black;
-  justify-content: space-between;
   padding: 5px;
+  justify-content: space-between;
 }
 
 .delete_button {

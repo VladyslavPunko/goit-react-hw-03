@@ -1,9 +1,9 @@
 .list {
   margin: 0 auto;
-  width: fit-content;
+  width: 350px;
   display: flex;
   flex-direction: column;
-  row-gap: 10px;
+  gap: 10px;
   padding: 10px;
   border: 1px solid black;
 }
