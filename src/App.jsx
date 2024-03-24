@@ -1,6 +1,7 @@
 import "./App.css";
 import { useState } from "react";
 import ContactList from "./Components/ContactList/ContactList";
+import SearchBox from "./Components/SearchBox/SearchBox";
 
 const initialContacts = [
   { id: "id-1", name: "Rosie Simpson", number: "459-12-56" },
@@ -11,10 +12,16 @@ const initialContacts = [
 
 function App() {
   const [contacts, setContacts] = useState(initialContacts);
+  const [filter, setFilter] = useState("");
+
+  const onChangeFilter = (event) => {
+    setFilter(event.target.valu);
+  };
 
   return (
     <div>
       <h1>Phonebook</h1>
+      <SearchBox />
 
       <ContactList contacts={contacts} />
     </div>
