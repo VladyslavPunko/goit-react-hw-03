@@ -1,10 +1,10 @@
 import css from "./SearchBox.module.css";
 
-const SearchBox = () => {
+const SearchBox = ({ filter, onChangeFilter }) => {
   return (
     <label className={css.label}>
       Finde contacts by name
-      <input />
+      <input placeholder="Search..." value={filter} onChange={onChangeFilter} />
     </label>
   );
 };

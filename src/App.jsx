@@ -15,15 +15,19 @@ function App() {
   const [filter, setFilter] = useState("");
 
   const onChangeFilter = (event) => {
-    setFilter(event.target.valu);
+    setFilter(event.target.value);
   };
+
+  const filtereContacts = contacts.filter((contact) =>
+    contact.name.toLowerCase().includes(filter.toLowerCase())
+  );
 
   return (
     <div>
       <h1>Phonebook</h1>
-      <SearchBox />
+      <SearchBox filter={filter} onChangeFilter={onChangeFilter} />
 
-      <ContactList contacts={contacts} />
+      <ContactList contacts={filtereContacts} />
     </div>
   );
 }
