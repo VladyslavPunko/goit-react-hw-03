@@ -4,7 +4,7 @@ import css from "./ContactList.module.css";
 const ContactList = ({ contacts, onDeleteContact }) => {
   return (
     <ul className={css.list}>
-      {contacts.lenght === 0 ? (
+      {contacts.length === 0 ? (
         <p>You do not have any contact!</p>
       ) : (
         contacts.map((contact) => {

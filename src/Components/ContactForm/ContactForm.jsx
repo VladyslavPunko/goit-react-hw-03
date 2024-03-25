@@ -49,7 +49,7 @@ const ContactForm = ({ addContact }) => {
           <Field
             id={numberFieldId}
             className={css.inp}
-            type="number"
+            type="tel"
             name="number"
           />
           <ErrorMessage className={css.err} name="number" component="span" />
