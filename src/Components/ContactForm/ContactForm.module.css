@@ -31,3 +31,7 @@
 .inp {
   border-radius: 3px;
 }
+
+.err {
+  color: brown;
+}
