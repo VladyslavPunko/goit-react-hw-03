@@ -3,6 +3,7 @@ import { useState } from "react";
 import ContactList from "./Components/ContactList/ContactList";
 import SearchBox from "./Components/SearchBox/SearchBox";
 import ContactForm from "./Components/ContactForm/ContactForm";
+import { nanoid } from "nanoid";
 
 const initialContacts = [
   { id: "id-1", name: "Rosie Simpson", number: "459-12-56" },
@@ -19,17 +20,22 @@ function App() {
     setFilter(event.target.value);
   };
 
-  const filtereContacts = contacts.filter((contact) =>
+  const addContact = (newContact) => {
+    const finalContact = { ...newContact, id: nanoid() };
+    setContacts((prevContacts) => [...prevContacts, finalContact]);
+  };
+
+  const filteredContacts = contacts.filter((contact) =>
     contact.name.toLowerCase().includes(filter.toLowerCase())
   );
 
   return (
     <div>
       <h1>Phonebook</h1>
-      <ContactForm />
+      <ContactForm addContact={addContact} />
       <SearchBox filter={filter} onChangeFilter={onChangeFilter} />
 
-      <ContactList contacts={filtereContacts} />
+      <ContactList contacts={filteredContacts} />
     </div>
   );
 }
