@@ -2,6 +2,7 @@ import "./App.css";
 import { useState } from "react";
 import ContactList from "./Components/ContactList/ContactList";
 import SearchBox from "./Components/SearchBox/SearchBox";
+import ContactForm from "./Components/ContactForm/ContactForm";
 
 const initialContacts = [
   { id: "id-1", name: "Rosie Simpson", number: "459-12-56" },
@@ -25,6 +26,7 @@ function App() {
   return (
     <div>
       <h1>Phonebook</h1>
+      <ContactForm />
       <SearchBox filter={filter} onChangeFilter={onChangeFilter} />
 
       <ContactList contacts={filtereContacts} />
